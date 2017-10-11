@@ -1,0 +1,26 @@
+{
+  "name": "bigeyes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheiron1990/BigEyes.git"
+  },
+  "author": "Cheiron Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheiron1990/BigEyes/issues"
+  },
+  "homepage": "https://github.com/cheiron1990/BigEyes#readme",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-isbot": "^0.1.1",
+    "koa-router": "^7.2.1",
+    "koa-send": "^4.1.1",
+    "koa-websocket": "^4.0.0"
+  }
+}

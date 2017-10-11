@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-cmn">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+  websocket
+  <script type="text/javascript">
+    const ws = new WebSocket('ws://localhost:3001')
+    ws.addEventListener('message', event => {
+      document.write(event.data)
+    })
+    ws.addEventListener('open', () => {
+      ws.send('hello server')
+    })
+  </script>
+</body>
+</html>
