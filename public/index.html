@@ -9,7 +9,20 @@
   <script type="text/javascript">
     const ws = new WebSocket('ws://localhost:3001')
     ws.addEventListener('message', event => {
-      document.write(event.data)
+      if (event.data.constructor === window.Blob) {
+        const blob = new window.Blob([event.data], {
+          type: 'image\/png'
+        })
+        const src = window.URL.createObjectURL(blob)
+        const img = document.createElement('img')
+        img.src = src
+        img.onload = () => {
+          window.URL.revokeObjectURL(src)
+        }
+        document.body.appendChild(img)
+      } else {
+        document.write(event.data)
+      }
     })
     ws.addEventListener('open', () => {
       ws.send('hello server')
